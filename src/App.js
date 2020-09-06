@@ -1,15 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import Summ, {multiply} from "./Example.js";
+import {sum, multiply} from "./Example.js";
 //import sayHello from "./test";
 
 function Person (properties) {
-  console.log(properties);
+  const name = properties.name;
+  const surname = properties.surname;
   return (
     <div>
       <h1> Hello</h1>
-      <p>My name is Karen </p>
+      <p>My name is {name} </p>
     </div>
   );
 }
@@ -27,8 +28,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Person surname = "Barseghyan" />
-        <Person />
+        <Person name = "Karen" />
+        <Person name = "Ruben"/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
