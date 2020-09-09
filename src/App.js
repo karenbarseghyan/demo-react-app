@@ -2,8 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person';
+import User from './Classes.js';
 
 function App() {
+  const person = new User();
   return (
     <div className="App">
       <header className="App-header">
