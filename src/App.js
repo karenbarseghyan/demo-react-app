@@ -5,11 +5,16 @@ import Person from './Person';
 import User from './Classes.js';
 
 function App() {
-  const person = new User();
+// const person = new User('John','Smith');
+//const person2 = new User('Jack','Vorobey');
+// console.log('Person', person);
+// console.log('Person2', person2);
+  
   return (
     <div className="App">
       <header className="App-header">
         <Person name = "Karen" surname = "Barseghyan" age  = "30"/>
+        <User />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
