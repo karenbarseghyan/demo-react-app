@@ -1,40 +1,19 @@
 import React, {Component} from 'react';
 
-
-/*class Person {
-    eat = () => 'eating';
-    sleep = () => 'sleeping';
-}; */
-
 class User extends Component {
-    /*constructor(name, surname){
-        super()
-        this.name = name;
-        this.surname = surname;
+    constructor(props){
+        super(props);
     };
-
-    getName(){
-        console.log(this.name);
-    }
-getSurname = function(){}; */
 
     render() {
         return(
-            <div>Class component</div>
+        <div>Your name is {this.props.name} </div>
         )
     }
 
 };
 
 export default User;
-
-
-
-
-
-
-
-
 
 
 /*class Product {

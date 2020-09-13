@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person';
-import User from './Classes.js';
+import {Name, Price, Description} from './Product.js';
 
 function App() {
 // const person = new User('John','Smith');
@@ -14,7 +14,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Person name = "Karen" surname = "Barseghyan" age  = "30"/>
-        <User />
+        <Name name ='Bananas' />
+        <Price price ='1$' />
+        <Description description ='Fresh Bananas' />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

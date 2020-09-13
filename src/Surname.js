@@ -4,7 +4,7 @@ function Surname(props) {
     const {surname} = props;
     return (
         <p>
-            My surname is {surname}
+            My surname is {surname} 
         </p>
     );
 }

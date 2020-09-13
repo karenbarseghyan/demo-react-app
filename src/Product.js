@@ -1,22 +1,42 @@
-import React from 'react';
-import Name from './Classes/Name';
-import Price from './Classes/Price';
-import Description from './Classes/Description';
+import React, {Component} from 'react';
 
+class Name extends Component {
+    constructor(props){
+        super(props);
+    };
 
-function Product (props) {
-    const {name} = props;
-    const {price} = props;
-    const {description} = props;
-
-    return (
-        <>
-          <h1> Hello </h1>
-          <Name name = {name} />
-          <Price price = {price} />
-          <Description description = {description} />
-        </>
-      );
+    render() {
+        return(
+        <div> {this.props.name} </div>
+        )
     }
-  
-export default Product;
+};
+
+class Price extends Component {
+  constructor(props){
+      super(props);
+  };
+
+  render() {
+      return(
+      <div> {this.props.price} </div>
+      )
+  }
+};
+class Description extends Component {
+  constructor(props){
+      super(props);
+  };
+
+  render() {
+      return(
+      <div> {this.props.description} </div>
+      )
+  }
+};
+
+
+export {Name, Price, Description};
+
+
+

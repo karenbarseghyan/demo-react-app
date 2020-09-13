@@ -1,7 +1,16 @@
-class Descrition {
-    description = 'fresh bananas';
-    getdescription() {
-        return(this.descrition);
+import React, {Component} from 'react';
+
+class Description extends Component {
+    constructor(props){
+        super(props);
+    };
+
+    render() {
+        return(
+        <div>{this.props.decription} </div>
+        )
     }
+
 };
-export default Descrition;
+
+export default Description;
