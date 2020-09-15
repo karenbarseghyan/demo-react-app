@@ -1,42 +1,22 @@
 import React, {Component} from 'react';
 
-class Name extends Component {
-    constructor(props){
-        super(props);
-    };
-
-    render() {
-        return(
-        <div> {this.props.name} </div>
-        )
-    }
-};
-
 class Price extends Component {
-  constructor(props){
-      super(props);
-  };
-
+  state = {price:1};
+  handleChange = () => {
+      let {price} = this.state;
+      price *= 487;
+      this.setState({price:price})
+  }
   render() {
       return(
-      <div> {this.props.price} </div>
+        <div> 
+            <button onClick = {this.handleChange}> Change the currency </button>
+            <span>{this.state.price}</span>
+        </div>
       )
   }
 };
-class Description extends Component {
-  constructor(props){
-      super(props);
-  };
-
-  render() {
-      return(
-      <div> {this.props.description} </div>
-      )
-  }
-};
-
-
-export {Name, Price, Description};
+export default Price;
 
 
 
