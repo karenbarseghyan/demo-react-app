@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
 
 class Counter extends Component {
-    state = {count:0};
-    handleDecrementClick = () => {
+    constructor() {
+        super();
+        this.state = {count:0};
+        this.handleDecrementClick = this.handleDecrementClick.bind(this);
+        this.handleIncrementClick = this.handleIncrementClick.bind(this);
+    }
+
+    
+    handleDecrementClick() {
         let {count} = this.state;
         count--;
         this.setState({count:count});
     };
-    handleIncrementClick = () => {
+    handleIncrementClick () {
         let {count} = this.state;
         count++;
         this.setState({count:count});
