@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
-import Counter from './Counter';
-import Price from './Product.js';
+import Product from './components/Product';
 
 function App() {  
   return (
     <div>
-      <Price />
+      <Product name = "Apple" price = "1$" description = "fresh" />
+      <Product name = "Banana" price = "2$" description = "fresh" />
     </div>
   );
 }
