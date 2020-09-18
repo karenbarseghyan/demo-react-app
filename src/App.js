@@ -1,11 +1,24 @@
 import React from 'react';
-import Product from './components/Product';
+import ChildComponent from './childComponent';
+import './main.css';
+
 
 function App() {  
   return (
     <div>
-      <Product name = "Apple" price = "1$" description = "fresh" />
-      <Product name = "Banana" price = "2$" description = "fresh" />
+      <>
+        <h1 style = {{
+          color: 'red',
+          fontSize: '50px'
+          }}>
+            Hello World
+          </h1>
+          <h2> Hi </h2>
+          <h2> 
+            <ChildComponent />
+          </h2>
+      </>
+      
     </div>
   );
 }
