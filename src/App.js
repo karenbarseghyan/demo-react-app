@@ -2,23 +2,25 @@ import React, {Component} from 'react';
 // import { useState } from 'react';
 // import ChildComponent from './childComponent';
 import './Styles/main.css';
+import styles from './Styles/app.module.css';
 
 
 class App extends Component{ 
       constructor (props) {
         super(props);
         this.state = {
-          color: 'green', 
+          colorClass: styles.yellowClass,
+         
         }     
       }  
       handleColorChange = () => {
-        if(this.state.color === 'green') {
+        if(this.state.colorClass === styles.greenClass) {
           this.setState({
-            color: 'red'
+            colorClass: styles.yellowClass
         })
         } else {
           this.setState({
-            color: 'green'
+            colorClass: styles.greenClass
         })
       }
     }
@@ -27,9 +29,9 @@ class App extends Component{
     return (
       
         <>
-          <h1 style = {{color: this.state.color}}>
+          <h1 className = {this.state.colorClass}>
               Hello World
-            </h1>
+          </h1>
             
             <h2> 
               
