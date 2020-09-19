@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './local.module.css';
+import styles from './Styles/local.module.css';
 
 function ChildComponent() {
     return (

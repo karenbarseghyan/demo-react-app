@@ -1,27 +1,43 @@
-import React from 'react';
-import ChildComponent from './childComponent';
-import './main.css';
+import React, {Component} from 'react';
+// import { useState } from 'react';
+// import ChildComponent from './childComponent';
+import './Styles/main.css';
 
 
-function App() { 
-    const someStyle = {
-      color: 'red',
-      fontSize: '50px'
-    } 
-  return (
-    <div>
-      <>
-        <h1 style = {{...someStyle}}>
-            Hello World
-          </h1>
-          <h2> Hi </h2>
-          <h2> 
-            <ChildComponent />
-          </h2>
-      </>
+class App extends Component{ 
+      constructor (props) {
+        super(props);
+        this.state = {
+          color: 'green', 
+        }     
+      }  
+      handleColorChange = () => {
+        if(this.state.color === 'green') {
+          this.setState({
+            color: 'red'
+        })
+        } else {
+          this.setState({
+            color: 'green'
+        })
+      }
+    }
       
-    </div>
-  );
+  render () {    
+    return (
+      
+        <>
+          <h1 style = {{color: this.state.color}}>
+              Hello World
+            </h1>
+            
+            <h2> 
+              
+              <button onClick = {this.handleColorChange}> Change Color </button>
+            </h2>
+        </>
+        
+    );
+  }
 }
-
 export default App;
