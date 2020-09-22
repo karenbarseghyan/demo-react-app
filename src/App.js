@@ -2,52 +2,39 @@ import React, {Component} from 'react';
 // import { useState } from 'react';
 // import ChildComponent from './childComponent';
 import './Styles/main.css';
-import styles from './Styles/app.module.css';
-import styled from 'styled-components';
-
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid red;
-  color: red;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-`;
+// import styles from './Styles/app.module.css';
+import './Styles/index.css';
+import TodoList from './components/TodoList.js';
+import AddTodo from './components/AddTodo';
 
 
 class App extends Component{ 
       constructor (props) {
         super(props);
         this.state = {
-          colorClass: styles.yellowClass,
-         
-        }     
-      }  
-      handleColorChange = () => {
-        if(this.state.colorClass === styles.greenClass) {
-          this.setState({
-            colorClass: styles.yellowClass
-        })
-        } else {
-          this.setState({
-            colorClass: styles.greenClass
-        })
-      }
+          
+          todoList : [],
+
+        }
     }
+  handleSubmit = (text) => {
+     
+    this.setState({
+      todoList : [text, ...this.state.todoList],
       
+    })
+  }
+  
   render () {    
+  
     return (
-      
-        <>
-          <h1 className = {this.state.colorClass}>
-              Hello World
-          </h1>
-          <Button> Styled Button </Button>
-          <h2> 
-          <button onClick = {this.handleColorChange}> Change Color </button>
-          </h2>
-        </>
-        
+      <main className = "appWrapper">
+        <header>
+          <h1> ToDo List </h1>
+        </header>
+        <AddTodo handleSubmit = {this.handleSubmit} />
+        <TodoList todoList = {this.state.todoList} />
+      </main>
     );
   }
 }
