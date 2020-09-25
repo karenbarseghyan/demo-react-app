@@ -17,11 +17,24 @@ class App extends Component{
 
         }
     }
+    todoId = 1;
   handleSubmit = (text) => {
      
     this.setState({
-      todoList : [text, ...this.state.todoList],
-      
+      todoList : [{
+        text : text,
+        todoId : this.todoId
+      }
+        , ...this.state.todoList],
+    })
+    this.todoId++;
+  }
+  handleDelete = (id) => {
+    const shallowList = this.state.todoList.filter((todo)=>{
+      return(todo.todoId !== id);
+    })
+    this.setState({
+      todoList : [...shallowList]
     })
   }
   
@@ -33,7 +46,7 @@ class App extends Component{
           <h1> ToDo List </h1>
         </header>
         <AddTodo handleSubmit = {this.handleSubmit} />
-        <TodoList todoList = {this.state.todoList} />
+        <TodoList handleDelete = {this.handleDelete} todoList = {this.state.todoList} />
       </main>
     );
   }

@@ -6,3 +6,10 @@
     align-items: center;
     height: 70vh;
 }
+.TodoItem_item {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: black;
+    background-color: rgb(163, 216, 241);
+}

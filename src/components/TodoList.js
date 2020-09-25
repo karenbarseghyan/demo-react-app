@@ -1,17 +1,20 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import TodoItem from './TodoItem'
 
 class TodoList extends Component{
-    todoId = 1;
+    
 
     render() {
         const todoList = this.props.todoList.map((todo) => {
-            this.todoId++;
-            return(<div key = {this.todoId}>{todo}</div>)
+            
+            return(<TodoItem key ={todo.todoId} 
+                            handleDelete = {() => {this.props.handleDelete(todo.todoId)}}
+                            todo ={todo} />)
           })
         return (
-            <>
+            <div>
                 {todoList}
-            </>
+            </div>
 
         )
     }
