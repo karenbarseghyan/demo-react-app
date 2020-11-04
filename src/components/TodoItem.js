@@ -1,22 +1,20 @@
 import React, {Component} from 'react';
-import '../Styles/main.css';
-import {IconDelete} from '../SVG/Icons';
+import {IconDelete} from "../SVG/Icons";
 
-class TodoItem extends Component {
+export default class TodoItem extends Component{
 
-    
 
-    
-    render() {
-        return(
-            <div className = 'TodoItem_item'>
-                {this.props.todo.text}
-                <button onClick = {this.props.handleDelete}> 
-                    <IconDelete height = '25px' width = '20px'/>
-                </button>
-            </div>
-        )
-    }
+
+  render() {
+
+    return(
+      <div className='TodoItem_item'>
+        {this.props.todo.text}
+        <button onClick={this.props.handleDelete}>
+          <IconDelete height='24px' width='24px'/>
+        </button>
+      </div>
+    )
+  }
 }
 
-export default TodoItem;
